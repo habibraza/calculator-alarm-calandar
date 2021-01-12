@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>attractive calculator</title>
+	
+	<style>
+	body{
+		margin: 0;
+		padding:0;
+		 background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red , yellow , pink);
+  
+
+}
+
+				
+.cal{
+	width: 500px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	
+	position: absolute;
+	color: linear-gradient(to right, red , yellow , pink);
+	top: 50%;
+	left: 52%;
+	transform: translate(50%,-50%);
+	transition: 0.25px;
+	
+}
+
+#display{
+border: none;
+background: white;
+border-radius: 40px;
+width: 245px;
+font-size: 25px;
+font-family: sans-serif;
+font-weight: 300px;
+height: 60px;
+margin:auto;
+border:2px solid white;
+color: black;
+}
+
+.btnDesign{
+width: 55px;
+height: 55px;
+padding-top: -1;
+background-color: white;
+border: none;
+font-family: sans-serif;
+font-size: 20px;
+font-weight: 300px;
+border-radius: 30px;
+margin: 1.5;
+
+}
+
+.operatorDesign{
+width: 55px;
+height: 55px;
+padding-top: -1;
+border: none;
+background-color: white;
+font-family: sans-serif;
+font-size: 20px;
+font-weight: 300px;
+border-radius: 30px;
+margin: 1.5;
+cursor: pointer;
+transition: 0.25px;
+
+}
+.operatorDesign:hover{
+	background: #00d9ff;
+}
+.btnDesign:hover{
+	background: orange;
+}
+#zero{
+	width: 120px;
+height: 55px;
+padding-top: -1;
+border: none;
+font-family: sans-serif;
+font-size: 20px;
+font-weight: 300px;
+border-radius: 30px;
+background: white;
+margin: 1.5;
+}
+
+#zero:hover{
+	background: green;
+}
+h1{
+	color: white;
+	margin-top: 300px;
+	margin-left: 100px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: 700px;
+	font-size: 50px;
+	text-decoration:underline;
+}
+
+h2{
+color: white;
+	margin-top: -1px;
+	margin-left: 460px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: 700px;
+	font-size:40PX;
+	
+}
+
+.nav{
+	width: 100%;
+	padding: 5px 0px;
+	color: white;
+box-sizing: border-box;
+
+	text-align: center;
+
+}
+
+.nav ul{
+	padding: 0px;
+	margin: 0px;
+}
+.nav ul li{
+list-style-type: none;
+display: inline-block;
+color: linear-gradient(to right, red , blue, pink);
+font-size: 25px;
+width: 150px;
+height: 60px;
+border-left: 1px solid linear-gradient(#12c2e9, #c471ed);
+cursor: pointer;
+
+}
+
+.nav ul li:hover{
+                 background: #12c2e9, #c471ed;
+                 color: white;
+                 font-weight: bold;
+
+
+}
+
+.nav ul li a{
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 7px;
+	border-radius: 3px;
+}
+
+*{
+	padding: 0px;
+	margin:0px;
+	text-decoration: none;
+	list-style: none;
+
+	color:linear-gradient(black, blue, red, pink);
+	text-transform: uppercase;
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+
+    <ul>
+    	<li><a href="home.html">CALCULATOR</a></li>
+    	<li><a href="alarm.html">ALARM</a></li>
+    	<li><a href="calandar.html">CALANDER</a></li>
+    </ul>
+	</div>
+<h1>online calculator</h1>
+<h2>BY:- HABIB RAZA PROJECT</h2>
+
+<form name="form1" class="cal" action="home.html" method="post">
+ <input type="text" name="answer" id="display">
+ <br>
+ </br>
+  <input type="button" class="btnDesign" value="C" onclick="form1.answer.value=''">
+ <input type="button" class="btnDesign" value="<" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)">
+ <input type="button" class="btnDesign" value="00" onclick="form1.answer.value+='00'">
+ <input type="button" class="operatorDesign" value="/" onclick="form1.answer.value+='/'">
+<br>
+</br>
+ <input type="button" class="btnDesign" value="7" onclick="form1.answer.value+='7'">
+  <input type="button" class="btnDesign" value="8" onclick="form1.answer.value+='8'">
+ <input type="button" class="btnDesign" value="9" onclick="form1.answer.value+='9'">
+ <input type="button" class="operatorDesign" value="*" onclick="form1.answer.value+='*'">
+ <br>
+</br>
+ <input type="button" class="btnDesign" value="4" onclick="form1.answer.value+='4'">
+ <input type="button" class="btnDesign" value="5" onclick="form1.answer.value+='5'">
+ <input type="button" class="btnDesign" value="6" onclick="form1.answer.value+='6'">
+ <input type="button" class="operatorDesign" value="-" onclick="form1.answer.value+='-'">
+ <br>
+</br>
+ <input type="button" class="btnDesign" value="1" onclick="form1.answer.value+='1'">
+ <input type="button" class="btnDesign" value="2" onclick="form1.answer.value+='2'">
+ <input type="button" class="btnDesign" value="3" onclick="form1.answer.value+='3'">
+ <input type="button" class="operatorDesign" value="+" onclick="form1.answer.value+='+'">
+ <br>
+</br>
+ <input type="button" id="zero"  value="0" onclick="form1.answer.value+='0'">
+ <input type="button" class="btnDesign" value="." onclick="form1.answer.value+='.'">
+  <input type="button" class="operatorDesign" value="=" onclick="form1.answer.value=eval(form1.answer.value)">
+</form>
+
+</body>
+
+
+
+
+
+
+</html>

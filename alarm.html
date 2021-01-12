@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>alarm system</title>
+</head>
+<style>
+	body{
+		text-align: center;
+		padding-top: 300px;
+		text-transform: uppercase;
+		 background-image: linear-gradient(to right, red , yellow , pink);
+         
+	}
+
+.ku{
+	
+	color: white;
+	font-family: sans-serif;
+	text-decoration: underline;
+	padding-right: 1000px;
+	font-size: 23px;
+	
+}
+.hey{
+	color: white;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: 40px;
+	padding-right: 400px;
+}
+
+
+
+
+
+
+
+</style>
+<body>
+	<div class="ku">
+<h1>ONLINE ALARM SYSTEM</h1>
+
+</div>
+<p class="hey">BY:- HABIB RAZA PROJECT</p>
+<input type="datetime-Local" id="alarmTime" />
+<button type="button" onclick="setAlarm(this);" id="alarmbutton">set alarm</button>
+
+
+<div id="alarmOptions" style="display: none;">
+	<button type ="button" onclick="Snooze();">Snooze 5 Minutes</button>
+	<button type="button" onclick="stopAlarm();">Stop alarm</button>
+
+</div>
+
+
+<script>
+	var alarmsound = new Audio();
+	alarmsound.src = 'alarm.mp3';
+	 var alarmTimer;
+	 function setalarm(button) {
+	 	var ms = document.getElementById('alarmTime').valueAsNumber;
+	 	if(isNaN(ms)) {
+	 		alert('Invalid Date');
+	 		return;
+	 	}
+
+ var alarm = new Date(ms);
+ var alarmTime = new Date(alarm.getUTCFullyear(), alarm.getUTCMonth(), alarm.getUTCDate(), alarm.getUTCHours(), alarm.getUTCMinutes(), alarm.getUTCSeconds());
+var differenceInMs = alarmTime.getTime() - (new Date()).getTime();
+
+
+if(differenceInMs < 0) {
+	alert('specified time is already passed!');
+	return;
+}
+
+alarmTimer = setTimeout(initAlarm, differenceInMs);
+button.innertext = 'cancal Alarm';
+button.setAttribute('onclick', 'cancalAlarm(this);');
+
+	 };
+
+
+	 function cancalAlarm(button) {
+	 	button.innertext = 'Set Alarm';
+	 	button.setAttribute('onclick', 'setAlarm(this);');
+	 	clearTimeout(alarmTimer);
+};
+
+function initAlarm() {
+	alarmSound.play();
+	document.getElementById('alarmOptions').style.display = '';
+};
+
+
+function stopAlarm() {
+	alarmSound.pause();
+	alarmSound.currentTime = 0;
+	document.getElementById('alarmOptions').style.display = 'none';
+	cancalAlarm(document.getElementById('alarmButton'));
+};
+
+function snooze(){
+	stopAlarm();
+	setTimeout(initAlarm, 36000);
+
+};
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
